@@ -1,0 +1,41 @@
+CC - Lecture 2/24/21
+
+We Covered:
+	⁃	Intros
+	⁃	Brief refresh on Hapi & backend
+	⁃	Talk about Routing/Middleware/Controllers/Actions
+	⁃	Clean up index.js
+	⁃	Port controllers & routes over to dedicated files
+	⁃	Postman
+	⁃	(TBD) Error handling - joi
+	⁃	(TBD) Validations
+
+
+Notes:
+
+Why Node?
+It’s server side JS which means you can write JS on the front & back end. It’s a lot easier than switching between languages. You will mainly choose Node when you’re working with a front-end framework like React (Vue and Angular are other options).
+
+Server.js (or index.js) main purpose is to connect to the DB, init middleware, init routes, and start the server. This file is the main point of entry, and depends on all other files in the app. Best to keep this one clean!
+
+Remember, Node doesn’t have a set in stone method for structuring your application. It’s up to your design choices. It’s best practice to decouple your Controller, Models, and Views.
+
+Postman is a great application for testing endpoints. Learn it, you’ll appreciate it!
+
+Why Node doesn’t like var (but it’s actually fine) - https://stackoverflow.com/questions/57951117/why-does-node-js-commonly-use-var-instead-of-let#:~:text=1%20Answer&text=It%20is%20because%20the%20Node,Babel%20which%20will%20help%20Node.
+
+
+Resources:
+
+Hapi - https://hapi.dev/tutorials/gettingstarted/?lang=en_US
+
+Routing - https://stackoverflow.com/questions/27766623/how-to-store-routes-in-separate-files-when-using-hapi
+
+Learn Postman - https://www.youtube.com/watch?v=t5n07Ybz7yI
+
+
+HW:
+
+Make sure y’all understand what require() and module.exports means!
+
+Do the same thing that we did in ./routes/api/users for the Riders endpoints. You only have to console.log a message & return the same as we did in Users. Make sure to test them with Postman!!! It’ll help a lot to learn it. I’ll link a few YouTube vids to learn from. Thanks again everyone!
