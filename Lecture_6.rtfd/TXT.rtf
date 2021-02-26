@@ -1,0 +1,252 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 Monaco;\f2\fswiss\fcharset0 Helvetica;
+\f3\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red18\green79\blue146;\red214\green0\blue72;
+\red22\green21\blue22;\red115\green115\blue115;\red22\green21\blue22;\red213\green213\blue213;\red78\green77\blue78;
+\red246\green246\blue246;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c7059\c39216\c63922;\cssrgb\c87843\c11765\c35294;
+\cssrgb\c11373\c10980\c11373\c3922;\cssrgb\c52549\c52549\c52549;\cssrgb\c11373\c10980\c11373;\cssrgb\c86667\c86667\c86667;\cssrgb\c38039\c37647\c38039;
+\cssrgb\c97255\c97255\c97255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid201\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid301\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid401\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Lecture 6: Making a pickup riders screen for drivers\
+\
+Today we:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'a0Added a NewRiders.js component so that our drivers could choose which rider they wanted to pick up\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 We created a NewRiders.js file in the components file, made a class, a render method, a constructor method, just like our other components\
+\
+in the App.js file, we imported this NewRiders.js file and rendered it in the html as a component (<NewRiders />\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://reactjs.org/docs/components-and-props.html"}}{\fldrslt \cf3 \strokec3 https://reactjs.org/docs/components-and-props.html\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'a0\'a0Start with mock data\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 We created a mock newRiders array, each with a riders and trip information\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \strokec4 \{
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      name: 'Chris',
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      trip: \{
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4           from: 123 fake st,
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4           to: Queens
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4 \}
+\f0\fs30 \cf2 \cb1 \strokec2 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 We created a getNewRiders method that called setTimeout (to simulate an api call) and add the newRiders to the state using setState\
+setTimeout\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.w3schools.com/jsref/met_win_settimeout.asp"}}{\fldrslt \cf3 \strokec3 https://www.w3schools.com/jsref/met_win_settimeout.asp}}\
+setState\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://reactjs.org/docs/react-component.html"}}{\fldrslt \cf3 \strokec3 https://reactjs.org/docs/react-component.html}}\
+read more about callbacks\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.w3schools.com/js/js_callback.asp"}}{\fldrslt \cf3 \strokec3 https://www.w3schools.com/js/js_callback.asp\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+in our html, we map through our newRiders (later waitingTrips) to show them on the screen for the driver\
+each newRider displayed their name, from, to and had a button to pick them up\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Build back end setup in order to handle a trip change of a waiting rider\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+in the trip.js model\
+We added a\'a0
+\f1\fs24 \cf4 \cb5 \strokec4 status
+\f0\fs30 \cf2 \cb1 \strokec2 \'a0attribute to the model so that we could track what "stage" the rider is on (started, waiting, pickedUp, completed, canceled, etc)\
+\
+We temporarily added a\'a0
+\f1\fs24 \cf4 \cb5 \strokec4 riderName
+\f0\fs30 \cf2 \cb1 \strokec2 \'a0so that we could display the rider's name of a trip (later, this will be executed using a SQL JOIN (using sequelize include)\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://sequelize.org/master/manual/model-basics.html"}}{\fldrslt \cf3 \strokec3 https://sequelize.org/master/manual/model-basics.html\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+in the tripsController.js\
+added a pickUp function that takes in a riderName, a driverID, and updates the status of a trip to\'a0
+\f1\fs24 \cf4 \cb5 \strokec4 pickedUp
+\f0\fs30 \cf2 \cb1 \strokec2 , searching by the riderName using a sequelize where query and an update on the Trip model\
+\
+after the trip is updated, we return the driver involved using our driverID argument by calling the driversController.show method (don't forget to import the driversController at the top!\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://sequelize.org/master/manual/model-querying-basics.html#simple-update-queries"}}{\fldrslt \cf3 \strokec3 https://sequelize.org/master/manual/model-querying-basics.html#simple-update-queries}}\
+{\field{\*\fldinst{HYPERLINK "https://sequelize.org/master/manual/model-querying-basics.html#applying-where-clauses"}}{\fldrslt \cf3 \strokec3 https://sequelize.org/master/manual/model-querying-basics.html#applying-where-clauses\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+modified our index function to take dynamic queries in order to be able to find all the trips that have status waiting. This uses a bit of object work, as well as the sequelize where method (object work is lecture 7)\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"}}{\fldrslt \cf3 \strokec3 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys}}\
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"}}{\fldrslt \cf3 \strokec3 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+in the index.js\
+added a GET route at /trips/waiting to find all the trips that have a waiting status, using our new functionality from the tripsController.index\
+\
+added a PUT route at /trips/pickup that let's us change a trip's status using the tripsController.pickUp method, passing in the riderName and the driverID from the body (payload in hapi)\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"}}{\fldrslt \cf3 \strokec3 https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods}}\
+{\field{\*\fldinst{HYPERLINK "https://hapi.dev/tutorials/expresstohapi/?lang=en_US"}}{\fldrslt \cf3 \strokec3 https://hapi.dev/tutorials/expresstohapi/?lang=en_US}}\'a0(search request.payload)\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440\partightenfactor0
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 setup data in the database to handle our scenario using POSTMAN\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 We opened postman and made several requests that setup our scenario\
+\
+add several trips\
+POST request to /trips\
+body:\
+\{\
+riderName: "\{insert riderName here\}",\
+status: "waiting",\
+riderID: \{add rider id\}\
+\}\
+\
+make one that has a different status (ie: canceled)\
+\
+add a couple drivers\
+POST request to /drivers\
+body:\
+\{\
+latitude: "40",\
+longitude: "60"\
+\}\
+\
+test it:\
+we can use our GET /trips/waiting route to get only the trips that are status: 'waiting' (the normal GET @ /trips should return all of them\
+\
+We can use our PUT trips/pickup to change the status of a ride\
+body:\
+\{\
+riderName: "\{insert one of your trips riderName 's\}",\
+driverID: \{insert one of your driver 's IDs\}\
+\}\
+\
+this simulates a pickup. Now, when you do a GET request at /trips, the trip with that rider should have changed the status to 'pickedUp'\
+(I found an error here, we should be looking up trips by the tripID probably, because there might be more than one trip with that riderName (we can deal with this later))\
+\
+Now when you do a GET at /trips/waiting , that trip should no longer end up in the response\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440\partightenfactor0
+\ls5\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Add this backend functionality to the frontend / remove the mock data\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 we changed the getNewRiders method to make an api request using fetch instead of setTimeout with mock data.\
+use the /trips/waiting GET method here. After we get the return, we should set the state to change the waiting trips from an empty array (the constuctor state) to our new waiting trips (don't forget to change newChange to false and isLoaded to true)\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"}}{\fldrslt \cf3 \strokec3 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch}}\
+setState link is further up in the notes\
+\
+our render method should map through our state.waitingTrips, and show the from, to, riderName, and have a button that onClick, will call the handleSubmit function with the correct riderName\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \strokec4 <button onClick=\{() => this.handleSubmit(waitingTrip.riderName)\}>Pick Up</button>\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f0\fs30 \cf2 \cb1 \strokec2 \
+we added a handleSubmit method that sets your url to hit the /trips/pickedUp route with a PUT method. Pass in the riderName and the driverID to the body of the request (the driverID is still mocked at the top of the file).\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"}}{\fldrslt \cf3 \strokec3 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch\
+}}\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+the return of this PUT request is the driver that is taking the trip, so now display his latitude and longitude in the render by changing the driver state changing pickedUp to true\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \strokec4 this.setState(\{
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      pickedUp: true,
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      driver,
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      waitingTrip: [],
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4      pickedUpRider: name
+\f0\fs30 \cf2 \cb1 \strokec2 \
+
+\f1\fs24 \cf4 \cb5 \strokec4 \})\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f0\fs30 \cf2 \cb1 \strokec2 \
+the render method will now show the drivers location after the rider has been picked up\
+\
+Note: for some reason I was getting a cors error here... still need to investigate\
+\
+For homework we will:\
+\
+\'a0See how far you can get with this setup: this is close to an entire feature of work, so understanding it will require fitting all the pieces together in your head\
+\
+Resources:\
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://medium.com/javascript-in-plain-english/fetch-using-get-post-put-delete-in-react-app-part-i-12d7496262b5"}}{\fldrslt \cf3 \strokec3 https://medium.com/javascript-in-plain-english/fetch-using-get-post-put-delete-in-react-app-part-i-12d7496262b5}}\
+{\field{\*\fldinst{HYPERLINK "https://code.tutsplus.com/tutorials/creating-a-blogging-app-using-react-part-4-update-delete-post--cms-28855"}}{\fldrslt \cf3 \strokec3 https://code.tutsplus.com/tutorials/creating-a-blogging-app-using-react-part-4-update-delete-post--cms-28855}}
+\fs26 \cf6 \strokec6 \uc0\u8234 \'a0(edited)\'a0
+\fs30 \cf2 \strokec2 \uc0\u8236 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf7 \cb8 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf9 \cb1 \strokec9 
+\b\fs30 \cf7 \strokec7 w3schools.com
+\b0 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.w3schools.com/jsref/met_win_settimeout.asp"}}{\fldrslt 
+\b \cf3 \strokec3 Window setTimeout() Method}}\
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf7 \cb8 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf9 \cb1 \strokec9 \pard\pardeftab720\sl300\partightenfactor0
+
+\b\fs30 \cf7 \strokec7 developer.mozilla.org
+\b0 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics"}}{\fldrslt 
+\b \cf3 \strokec3 CSS basics - Learn web development | MDN}}\
+CSS (Cascading Style Sheets) is the code that styles web content. CSS basics walks through what you need to get started. We'll answer questions like: How do I make text red? How do I make content display at a certain location in the (webpage) layout? How do I decorate my webpage with background images and colors?\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf7 \cb8 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f2 \cf9 \cb1 \strokec9 
+\f3\b\fs30 \cf7 \cb10 \strokec7 flaviocopes.com
+\f2\b0 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://flaviocopes.com/axios/"}}{\fldrslt 
+\f3\b \cf3 \strokec3 HTTP requests using Axios}}\
+Axios is a very popular JavaScript library you can use to perform HTTP requests, that works in both Browser and Node.js platforms\'a0(36 kB)\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf7 \cb1 \
+}
