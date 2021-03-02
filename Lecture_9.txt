@@ -1,0 +1,72 @@
+CC - Lecture 3/1/21
+
+Topics:
+	⁃	Postman
+	⁃	Post requests
+	⁃	RESTful routes
+	⁃	Go through Creating a User
+	⁃	Comments
+	⁃	Validations
+	⁃	Error handling - joi
+
+
+Notes:
+
+Validations
+Checking to see if the data is the data that we except.
+Validate information before you try to send it to the database! 
+Don’t want bad data persisted!
+
+(Good data example)
+Christian
+christian@email.com
+Password1234
+
+(Bad data example)
+_________
+christianemail.com
+Password
+
+Creating a new User
+Request -> Routes -> Validations -> User.create() -> Response
+
+Comments
+Always be sure to leave good comments so that other developers & your future self can understand your previous code.
+
+Comment example for routes
+// @route GET /user/{id}
+// @desc Gets a specific user
+// @access PUBLIC (meaning anyone can access this route)
+
+Sending a POST in Postman
+1) Set the request method
+2) Set the url to the route you want to hit
+3) Under Headers add { Content-Type: application/json }
+4) Select Body then raw
+5) Here you can add data in json
+
+Accessing data on the server
+If you have data listed in the params like ‘/users/{id}’ use ‘request.params.id’
+If you have data listed in the body of a POST request use ‘request.payload’
+
+RESTful Routes
+The common naming convention for routes.
+
+
+Resources:
+
+Postman POST req video - https://www.youtube.com/watch?v=rZILP_3OP-A
+
+Validations (joi) - https://hapi.dev/tutorials/validation/?lang=en_US
+
+RESTful Routes - https://miro.medium.com/max/2628/1*M0hdLsgbzelOFuq-1BVH-g.png
+
+
+HW:
+
+Use Postman!
+
+Create the Post request for riders. Remember to run ’npm install joi’ in the top directory of your project, and require it in the riders file. Create an array of riders. Then push the data from the post request to the array.
+
+Feel free to reference my repo or slack me with any questions. Thanks.
+

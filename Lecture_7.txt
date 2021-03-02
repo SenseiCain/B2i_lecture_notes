@@ -1,0 +1,114 @@
+Lecture 7: Javascript and Github
+
+Today we:
+
+Part 1: Javascript:
+
+		Worked with javascript arrays
+
+definition: a list
+getters:
+learned how to index into an array riders[2]
+setters
+learned how to change an element riders[2] = 'jim'
+
+https://www.w3schools.com/js/js_arrays.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+		Worked with objects
+
+definition: a set of key value pairs
+getters:
+learned how to index into an object car.make or car['make']
+setters
+learned how to change a value car.make = 'honda'
+
+https://www.w3schools.com/js/js_objects.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+
+		Worked with loops
+learned how to loop through an array
+for (let i = 0; i < array.length; i++) {
+}
+
+https://www.w3schools.com/js/js_loop_for.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+
+		Worked with if statements
+
+definitions: if a code statement evaluates to truthy, run a block of code
+if (true) doSomething()
+
+https://www.w3schools.com/js/js_if_else.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
+		Worked with functions
+
+definition: declare a function that will run a block of code once it's evaluated
+
+learned how functions are declared
+function doSomething() {} vs const doSomething = () => {}
+
+learned how to execute a function
+doSomething()
+how to return a value from a function
+function doSomething() {
+     return true
+}
+
+https://www.w3schools.com/js/js_functions.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+
+		Used functions to solve a specific task
+Built a function that collected all of the odd numbers in an array
+Built a function that collected all of the even numbers in an array
+Built a function that updates an attribute in an object
+
+Resources:
+https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
+https://www.w3schools.com/js/js_callback.asp
+
+look for methods on the left (for both):
+filter, map, forEach
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#
+keys
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#
+
+For Homework you will:
+		write a function that collects all the numbers in an array that are under 10
+test the function by running the file (using node) and console.logging the result
+		write a function that given a car object (as an argument), changes it's make attribute to whatever is passed in (as an argument)
+test the function by running the file (using node) and console.logging the result
+
+
+Part 2: Github
+
+Creating a project:
+https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
+
+Branching off of a project:
+https://guides.github.com/introduction/flow/
+git checkout -b feature/my-feature-name
+git status
+if the files you want are red ==> git add .
+git status
+if the files you want are green ==> git commit -m "Start setting up the feature"
+git push origin feature/my-feature-name
+
+Open a pull request to the main branch
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+Go to the github.com link for your project
+Navigate to your branch
+Open a pull request to the main branch
+Make the pull request, adding any relevant comments
+
+For homework you will:
+NOTE: USE GITIGNORE TO NOT UPLOAD NODE_MODULES TO GITHUB
+https://github.com/github/gitignore/blob/master/Node.gitignore (namely line 42)
+(create a .gitignore file and put this line in it will automatically not add it to the checked in files)
+
+		Upload your uber project to github and share the link on this channel
+
+		Create a new branch, add some test code, and push the branch, share the link on this channel
+
+		Open a pull request from your new branch to the main branch, share the link on this channel (to the pull request)
