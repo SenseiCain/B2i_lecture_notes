@@ -1,0 +1,40 @@
+CC - Lecture 3/3/21
+
+Topics:
+	- Update & Delete (last CRUD functions)
+	- Validations (we’ll write our own)
+	- Data modeling
+
+
+Notes: 
+
+CRUD - Create Read Update Delete
+
+These RESTful routes are an industry standard way of mapping your controller’s to your models. They’re a LOT of info, but very reusable!
+
+Models - remember you don’t want to interact with your data directly. We use models to MODEL the data, and use them as a middle ground between your Routes & Database.
+
+Array.push() => Adds to an array
+Array.splice(index, 1) => Removes from an array
+
+Find, findIndex, map => these are what’s called “higher-order” functions, which simply means they are functions that are comprised of smaller functions.
+
+In Postman if we wanted to reach the destroy route, we sent a DELETE requests.
+
+For Show, Update, and Delete we need an index because we’re referencing an individual user.
+
+REMEMBER - id doesn’t always correspond to index. An array is always going to start at 0. An id can be anything!
+
+
+Resources:
+
+JS Array functions (10 mins) - https://www.youtube.com/watch?v=R8rmfD9Y5-c
+MVC (4 mins) - https://www.youtube.com/watch?v=DUg2SWWK18I
+More Postman (12 mins) - https://www.youtube.com/watch?v=c425kGSsBfo
+
+
+HW:
+
+Watch the videos listed above & I’ll send some basic coding challenges.
+Try to do everything we did tonight, without using the data modeling I.e. userClass. 
+We can flip the script & have y’all code next week, that way we get more practice.
